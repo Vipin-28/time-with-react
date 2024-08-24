@@ -12,7 +12,7 @@ function InputBox({
   className = "",
 }) {
   const amountInputId = useId();
-
+  console.log(currencyOptions);
   return (
     <div className={`bg-white p-3 rounded-lg text-sm flex `}>
       <div className="w-1/2">
@@ -42,10 +42,12 @@ function InputBox({
           onChange={(e) => onCurrencyChange && onCurrencyChange(e.target.value)}
           disabled={currencyDisabled}
         >
-          {currencyOptions.map((currency) => {
-            <option key={currency} value={currency}>
-              {currency}
-            </option>;
+          {currencyOptions.map((element) => {
+            return (
+              <option key={element} value={element}>
+                {element}
+              </option>
+            );
           })}
         </select>
       </div>
